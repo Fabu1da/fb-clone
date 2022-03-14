@@ -22,7 +22,7 @@ export default function Home() {
           <>
             <Header/>
             {/* sidebar */}
-            <main className='flex'>
+            <main className='flex bg-gray-100'>
               <SideBar />
             
             {/* Feed */}

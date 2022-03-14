@@ -1,4 +1,6 @@
 import Stories from './Stories'
+import InputBox from './InputBox'
+import Posts from './Posts'
 const Feed =()=>{
     return(
         <>
@@ -8,7 +10,9 @@ const Feed =()=>{
                 <Stories />
             </div>
             {/* Form */}
+            <InputBox />
             {/* POst */}
+            <Posts />
         </div>
         </>
     )

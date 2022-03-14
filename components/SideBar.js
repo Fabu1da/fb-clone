@@ -21,7 +21,8 @@ return(
     <div className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]">
     <SideBarRow
         src={session.data.user.image}
-        title={session.data.user.name} />
+        // title={session.data.user.name} 
+        title="Fabu1da"/>
         <SideBarRow
         Icon={UserIcon}
         title="Friends" />
