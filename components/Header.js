@@ -55,8 +55,7 @@ const Header = () => {
         layout="fixed"
         />
         <p className=' whitespace-nowrap font-semibold pr-2 '> 
-        Welcome, Fabu1da
-        {/* {session.data.user.name ?? session.data.user.email} */}
+        Welcome, {session.data.user.name ?? session.data.user.email}
         </p>
         <ViewGridIcon className='icon' />
         <ChatIcon className='icon' />

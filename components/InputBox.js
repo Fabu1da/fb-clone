@@ -5,7 +5,7 @@ import {CameraIcon, VideoCameraIcon} from '@heroicons/react/solid'
 import { useRef, useState } from "react";
 
 import {app, db} from '../Firebase'
-import { collection, addDoc, Timestamp, serverTimestamp, doc, setDoc } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp, doc, setDoc, getDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadString, getDownloadURL } from "firebase/storage";
 const InputBox = () =>{
     const session = useSession();
@@ -30,17 +30,19 @@ const InputBox = () =>{
                     
                     }).then((docRef) =>{
                         if(imageTopost){
-                            const uploadTask =ref( getStorage(),`posts/${doc.id}`)
-                            removeImage();
+                            console.log(imageTopost);
+                            const uploadTask =ref(getStorage(),`posts/${doc.id}`)
+                           
                             uploadString(uploadTask, imageTopost, 'data_url').then(() => {
                                 getDownloadURL(uploadTask).then(
                                     (url)=>{
-                                        setDoc(doc(dbInstance, docRef.id), {
+                                        getDoc(doc(dbInstance, docRef.id), {
                                             postImage:url
                                         }, { merge: true });
                                     }
                                 )
                             });
+                            removeImage();
                         }
                     });
 

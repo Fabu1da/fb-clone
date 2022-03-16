@@ -8,9 +8,7 @@ const Posts = () => {
 
   var i=0;
   const [value, loading, error] = useCollection(
-    collection(db,'posts'), orderBy("timestamp","asc"), setTimeout(()=>{
-      "iam searching"
-    },3000)
+    collection(db,'posts'), orderBy('timestamp','asc')
   );
   return (
     <div>
@@ -24,9 +22,10 @@ const Posts = () => {
                 {
 
                     return(
-                      <div key={post.id}>
+                     
                     
                         <Post 
+                        key={post.id}
                         name={post.data().name}
                         message ={post.data().message}
                         email = {post.data().email}
@@ -34,7 +33,7 @@ const Posts = () => {
                         timestamp = {post.data().timestamp}
                         postImage = {post.data().postImage}
                         />
-                      </div>
+                     
                     )
                 })}
               

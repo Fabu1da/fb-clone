@@ -3,15 +3,16 @@ const Storycard = ({name, src, profile}) =>{
     return(
         <>
         <div className='h-56 w-36 rounded-xl shadow-lg  overflow-hidden relative'>
-            
-            <Image 
-                className='absolute opacite-0 shadow-lg lg:opacite-300 rounded-full z-50 m-5'
-                src={profile}
-                width={40}
-                height={40}
-                layout="fixed"
-                objectFit='cover'
-                />
+            <div className="rounded-full relative border-4 h-12 w-12 border-blue-500 max-h-fit">
+                <Image 
+                    className='absolute opacite-0 shadow-lg lg:opacite-300 rounded-full z-50 m-5'
+                    src={profile}
+                    width={40}
+                    height={40}
+                    layout="fixed"
+                    objectFit='cover'
+                    />
+            </div>
 
             <Image 
                 className='object-cover filter brightness-75'

@@ -1,5 +1,8 @@
+import Image from 'next/image'
 import Storycard from '../components/Storycard'
-
+import { useSession } from 'next-auth/react'
+// import {PlusIcon} from '@heroicons/react/outline'
+import {PlusIcon} from '@heroicons/react/solid'
 const stories = [
     {
         id:1,
@@ -28,9 +31,29 @@ const stories = [
     },
 ]
 const Stories = () =>{
+    const session = useSession()
     return(
         <>
         <div className="flex justify-center space-x-3 mx-auto">
+        <div className='h-56  w-36 rounded-xl shadow-lg  overflow-hidden relative'>
+            
+
+            <Image 
+                className='object-cover filter brightness-75'
+                src={session.data.user.image}
+                layout="fill"
+                objectFit='cover'
+                />
+
+            <div className='absolute bottom-0 h-12 w-full  bg-white z-50'>
+               <div className='flex justify-center border-2 border-white items-center bg-blue-600 mt-[-15px] rounded-full mx-auto w-8 h-8'>
+                   <PlusIcon 
+                   className='text-white cursor-pointer'
+                   />
+               </div>
+            </div>
+              
+        </div>
           {stories.map(function(story){
              return(
                  <Storycard 

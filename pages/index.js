@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import SideBar from '../components/SideBar'
 import Feed from '../components/Feed'
 import Login from './Login'
+import Widget from '../components/Widget'
 import { useSession } from 'next-auth/react'
 
 export default function Home() {
@@ -25,13 +26,16 @@ export default function Home() {
             <main className='flex bg-gray-100'>
               <SideBar />
             
-            {/* Feed */}
+             {/* Feed */}
               <Feed />
            
-            {/* Widget */}
+             {/* Widget */}
+
+              <Widget />
+
             </main>
         
-          <h1>Clone facebook </h1>
+         
           </>
         }
           

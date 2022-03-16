@@ -15,6 +15,7 @@ const nextConfig = {
       "www.ktpress.rw",
       "cdn.prod.www.spiegel.de",
       "hips.hearstapps.com",
+      "firebasestorage.googleapis.com",
     ],
   }
 }
