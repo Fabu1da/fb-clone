@@ -15,7 +15,7 @@ import SideBarRow from './SideBarRow'
 
 const SideBar = () => {
     const session = useSession();
-    console.log(session);
+//     console.log(session);
 return(
     <>
     <div className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]">

@@ -16,7 +16,7 @@ import { useSession, signOut } from 'next-auth/react'
 
 const Header = () => {
     const session = useSession();
-    console.log(session);
+    // console.log(session);
     return (
     <div className='flex sticky top-0 z-50 bg-white p-2 lg:p-5 items-center shadow-md'>
     {/* Header left */}

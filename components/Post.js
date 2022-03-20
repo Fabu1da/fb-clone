@@ -8,8 +8,8 @@ const Post = ({name, message, postImage, image, email, timestamp}) =>{
         // var date = new Date(new Timestamp(timestamp).seconds.seconds*1000);   
     return(
         <>
-        <div className="flex flex-col bg-white p-3 rounded-xl shadow-lg mt-4 ">
-            <div className="flex space-x-2 p-2 border-b">
+        <div className="flex flex-col bg-white rounded-xl shadow-lg mt-4 ">
+            <div className="flex space-x-2 p-3 border-b">
             <div className="rounded-full relative border-4 h-12 w-12 border-blue-500 max-h-fit">
             <Image
                 className="rounded-full border-2 border-blue-500"
@@ -27,18 +27,21 @@ const Post = ({name, message, postImage, image, email, timestamp}) =>{
                     </p>
                 </div>
             </div>
-            <div>
+            <div className="p-3">
                 {message}
             </div>
-            <div>
-                <img
-                // src={postImage}
+            <div className="relative w-full  max-h-fit">
+                <img 
+                className="w-full"
                 src={postImage}
-                layout="fixed"
                 />
+                {/* <Image
+                src={postImage}
+                layout="fill"
+                /> */}
             </div>
            
-                <div className="flex justify-evenly border-t mt-2 pt-2">
+                <div className="flex justify-evenly p-2 border-t ">
                     <div className="flex hover:bg-gray-100 flex-1 items-center justify-center cursor-pointer text-blue-600 rounded-xl p-1">
                         <ThumbUpIcon 
                         className="h-6 space-x-8"/>

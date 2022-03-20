@@ -30,13 +30,13 @@ const InputBox = () =>{
                     
                     }).then((docRef) =>{
                         if(imageTopost){
-                            console.log(imageTopost);
-                            const uploadTask =ref(getStorage(),`posts/${doc.id}`)
-                           
+                            
+                            const uploadTask =ref(getStorage(),`posts/${docRef.id}`)                           
                             uploadString(uploadTask, imageTopost, 'data_url').then(() => {
                                 getDownloadURL(uploadTask).then(
                                     (url)=>{
-                                        getDoc(doc(dbInstance, docRef.id), {
+
+                                        setDoc(doc(dbInstance, docRef.id), {
                                             postImage:url
                                         }, { merge: true });
                                     }
